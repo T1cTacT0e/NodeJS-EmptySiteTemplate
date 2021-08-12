@@ -28,5 +28,12 @@ curl localhost:8081
       }
     }
 
+    stage('Publish the archive') {
+      steps {
+        archiveArtifacts 'node.tar.gz'
+        cleanWs(cleanWhenAborted: true, cleanWhenFailure: true, cleanWhenNotBuilt: true, cleanWhenSuccess: true, cleanWhenUnstable: true, deleteDirs: true, cleanupMatrixParent: true, disableDeferredWipeout: true)
+      }
+    }
+
   }
 }
