@@ -22,5 +22,11 @@ curl localhost:8081
       }
     }
 
+    stage('Package Code') {
+      steps {
+        sh 'tar -czvf node.tar.gz  .'
+      }
+    }
+
   }
 }
